@@ -132,8 +132,22 @@ This allows you to select a goal position for the end effector, which is current
 
 [User selected position video](https://github.com/user-attachments/assets/04dbb11c-bca4-4c05-95ae-251d70f41931)
 
+## Attribution
+
+This project builds upon excellent work from the ROS 2 community. We are grateful to the original authors who created the foundation for AR4 robot support in ROS 2.
+
+The `ar4_description` and `ar4_hardware_interface` packages are derivative works based on the [ar4_ros_driver](https://github.com/ycheng517/ar4_ros_driver) repository by Dexter Ong and Yifei Cheng, providing the original URDF description, meshes, and hardware interface implementation for the AR4 robot in ROS 2.
+
+The `ar4_moveit_config` package was generated using the [MoveIt2 Setup Assistant](https://moveit.picknik.ai/main/doc/examples/setup_assistant/setup_assistant_tutorial.html) and has been customized for this project's specific requirements.
+
 ## Licenses
 
-All packages in this repository except for `ar4_description` and `ar4_hardware_interface` are distributed under a **BSD 3-Clause** License.
+Most packages in this repository are distributed under the **BSD 3-Clause License** (Copyright 2025, Ekumen Inc.).
 
-`ar4_description` is a derivative work from the [ar4_ros_driver](https://github.com/ycheng517/ar4_ros_driver/tree/main/annin_ar4_description) repository, which is distributed under a **MIT License**.
+The following packages have different licenses due to their derivative nature:
+
+- **`ar4_description`**: MIT License (Copyright 2021, Dexter Ong) - Derivative work from [ar4_ros_driver](https://github.com/ycheng517/ar4_ros_driver)
+- **`ar4_hardware_interface`**: MIT License (Copyright 2021, Dexter Ong) - Derivative work from [ar4_ros_driver](https://github.com/ycheng517/ar4_ros_driver)
+- **`ar4_moveit_config`**: BSD 3-Clause License (Copyright 2025, Ekumen Inc.) - Generated and modified from MoveIt2 Setup Assistant templates
+
+Please refer to the LICENSE file in each package directory for complete license terms.
