@@ -1,0 +1,63 @@
+# Pick and Place Configuration Parameters
+# This file contains all configurable parameters for AR4 pick-and-place operations
+
+/**:
+  ros__parameters:
+    # MoveIt Planning Parameters
+    planning_group: "arm"
+    end_effector_link: "link_6"
+    base_frame: "base_link"
+    
+    # Planning timeouts and attempts
+    planning_time: 10.0              # seconds
+    max_planning_attempts: 5
+    planning_timeout: 5.0            # seconds
+    
+    # Motion scaling factors (0.0 to 1.0)
+    velocity_scaling: 0.1            # 10% of max velocity (conservative)
+    acceleration_scaling: 0.1        # 10% of max acceleration
+    
+    # Pick and Place Behavior
+    approach_distance: 0.10          # meters - distance above object for approach
+    retreat_distance: 0.10           # meters - distance to lift after grasp
+    grasp_offset_z: 0.0              # meters - z-offset from detected object pose
+    place_offset_x: 0.15             # meters - x-offset for placement relative to reference
+    place_offset_y: 0.0              # meters - y-offset for placement
+    
+    # Gripper Parameters
+    gripper_mode: "simulated"        # "simulated" or "physical"
+    gripper_open_position: 0.04      # meters (for physical gripper)
+    gripper_close_position: 0.0      # meters (for physical gripper)
+    gripper_max_effort: 10.0         # Newtons (for physical gripper)
+    
+    # Object sizes (for collision objects in meters)
+    default_object_size: [0.05, 0.05, 0.05]  # [x, y, z]
+    
+    # Safety Parameters
+    enable_collision_checking: true
+    planning_pipeline: "ompl"        # or "pilz_industrial_motion_planner"
+    
+    # Debug/Visualization
+    publish_trajectory_markers: true
+    verbose_logging: false
+
+# Gripper Controller Parameters
+gripper_controller:
+  ros__parameters:
+    end_effector_link: "link_6"
+    gripper_open_position: 0.04
+    gripper_close_position: 0.0
+    gripper_max_effort: 10.0
+
+# Pick Place Controller Parameters  
+pick_place_controller:
+  ros__parameters:
+    planning_group: "arm"
+    end_effector_link: "link_6"
+    base_frame: "base_link"
+    planning_time: 10.0
+    velocity_scaling: 0.1
+    acceleration_scaling: 0.1
+    approach_distance: 0.10
+    retreat_distance: 0.10
+    max_planning_attempts: 5
